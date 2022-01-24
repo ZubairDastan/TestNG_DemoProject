@@ -12,7 +12,8 @@ public class Utils {
     public String mail;
     public String Pass;
     WebDriver driver;
-    public void utils (WebDriver driver) {
+
+    public void utils(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
@@ -33,15 +34,17 @@ public class Utils {
         Pass = pass;
     }
 
-    public void readFromJson () throws IOException, ParseException {
-        JSONParser jsonParser = new JSONParser();
-        Object object = jsonParser.parse(new FileReader("./src/test/resources/users.json"));
-        JSONObject jsonObject = (JSONObject) object;
-        setMail((String) jsonObject.get("email"));
-        setPass((String) jsonObject.get("password"));
-    }
+//    To read data from a single json data
+//    public void readFromJson() throws IOException, ParseException {
+//        JSONParser jsonParser = new JSONParser();
+//        Object object = jsonParser.parse(new FileReader("./src/test/resources/users.json"));
+//        JSONObject jsonObject = (JSONObject) object;
+//        setMail((String) jsonObject.get("email"));
+//        setPass((String) jsonObject.get("password"));
+//    }
 
-    public void readFromJsonArrray (int positoin) throws IOException, ParseException {
+//  To read data from a json type array
+    public void readFromJsonArray(int positoin) throws IOException, ParseException {
         JSONParser jsonParser = new JSONParser();
         Object object = jsonParser.parse(new FileReader("./src/test/resources/users.json"));
         JSONArray jsonArray = (JSONArray) object;

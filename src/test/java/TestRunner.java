@@ -8,7 +8,7 @@ public class TestRunner extends EnvironmentSetup {
         Login login = new Login(driver);
         driver.get("http://automationpractice.com");
         Utils utils = new Utils();
-        utils.readFromJsonArrray(0);
+        utils.readFromJsonArray(0);
         String user = login.validMailPass(utils.getMail(), utils.getPass());
         Assert.assertEquals(user, "Test User");
     }
@@ -18,7 +18,7 @@ public class TestRunner extends EnvironmentSetup {
         Login login = new Login(driver);
         driver.get("http://automationpractice.com");
         Utils utils = new Utils();
-        utils.readFromJsonArrray(1);
+        utils.readFromJsonArray(1);
         String user = login.loginInvalidMail(utils.getMail(), utils.getPass());
         Assert.assertEquals(user, "Invalid email address");
     }
@@ -28,7 +28,7 @@ public class TestRunner extends EnvironmentSetup {
         Login login = new Login(driver);
         driver.get("http://automationpractice.com");
         Utils utils = new Utils();
-        utils.readFromJsonArrray(2);
+        utils.readFromJsonArray(2);
         String user = login.loginInvalidPass(utils.getMail(), utils.getPass());
         Assert.assertEquals(user, "Authentication error");
     }
